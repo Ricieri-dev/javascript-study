@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+    <script>
+        var nome = prompt('Digite seu nome: ');
+        var altura = prompt('Digite sua altura em cm : ');
+        var peso = prompt('Informe seu peso em kg: ');
+        parseFloat(peso) ;
+        parseFloat(altura);
+
+        altura = altura/100 ;
+        var m = peso/(altura*altura)
+        var classif = null
+        
+        if(m<16){
+            classif = 'Baixo peso, muito grave'
+        }if(m>=16 && m<=16.99){
+            classif = 'Baixo peso grave'
+        }if(m>=17 && m<=18.49){
+            classif = 'Baixo peso'
+        }if(m>=18.50 && m<=24.99){
+            classif = 'peso normal'
+        }if(m>=25 && m<=29.99){
+            classif = 'sobrepeso'
+        }if(m>=30 && m<=34.99){
+            classif = 'Obesidade grau I'
+        }if(m>=35 && m<=39.99){
+            classif = 'Obesidade grau II'
+        }if(m>40){
+            classif = 'Obesidade grau III'
+        }
+
+        document.write(nome + " possui índice de massa corporal igual a "+m+", sendo classificado como "+classif)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
