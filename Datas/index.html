@@ -5,93 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funções com datas</title>
     <script>
-        /*
-        var data = new Date();
-        data.getDate
-        document.write(data)
-        document.write('<hr>')
-        document.write(data.getDay())
-        document.write('<hr>')
-        //document.write(data.getDate() +'/'+(data.getMonth()+1)+'/'+data.getFullYear())
-        var dia = data.getDate();
-        var mes = data.getMonth() + 1;
-        var ano = data.getFullYear();
-        dia = (dia < 10) ? '0' + dia : dia;
-    mes = (mes < 10) ? '0' + mes : mes;
-    document.write(dia + '/' + mes + '/' + ano);
-    document.write('<hr>')
-        //adicionar / remover dias
-        document.write(data.toString());
-        data.setDate(data.getDate()+1);
-        document.write('<hr>')
-        document.write(data.toString())
+        // Diferença de dias entre as datas
+        var data1 = new Date(2024, 0, 15); // 15/01/2024
+        var data2 = new Date(2024, 11, 23); // 23/12/2024
 
-        document.write('<br>')
-        document.write('<br>')
-        document.write('<br>')
-        document.write('<hr>')
-        
-        
-        //adicionar / remover meses
-        document.write(data.toString());
-        data.setMonth(data.getMonth()+12);
-        document.write('<hr>')
-        document.write(data.toString())
+        // Mostrar as datas
+        document.write("Data 1: " + data1.toString());
+        document.write('<br><hr>');
+        document.write("Data 2: " + data2.toString());
+        document.write('<br><hr>');
 
-        document.write('<br>')
-        document.write('<br>')
-        document.write('<br>')
-        document.write('<hr>')
+        // Converter datas para milissegundos
+        var milissegundos1 = data1.getTime();
+        var milissegundos2 = data2.getTime();
+        document.write("Milissegundos Data 1: " + milissegundos1);
+        document.write('<br>');
+        document.write("Milissegundos Data 2: " + milissegundos2);
+        document.write('<br><hr>');
 
-        //adicionar / remover ano
-        document.write(data.toString());
-        data.setFullYear(data.getFullYear()+12);
-        document.write('<hr>')
-        document.write(data.toString())
-        */
+        // Calcular a diferença de milissegundos
+        var milissegundos_entre_datas = Math.abs(milissegundos1 - milissegundos2);
+        document.write("Milissegundos entre as datas: " + milissegundos_entre_datas);
+        document.write('<br><hr>');
 
-        //diferença de dias entre as datas
-        //15/01/2024
-        var data1 = new Date(2024,0,15)
+        // Definir milissegundos por dia
+        var milissegundos_por_dia = (1 * 24 * 60 * 60 * 1000);
+        document.write('1 dia tem: ' + milissegundos_por_dia + ' milissegundos');
+        document.write('<br><hr>');
 
+        // Calcular a diferença em dias
+        var diferenca_mili_dia = milissegundos_entre_datas / milissegundos_por_dia;
+        document.write('A diferença entre data1 e data2 é: ' + diferenca_mili_dia.toFixed(0) + ' dia(s)');
+        document.write('<br><hr>');
 
-        //23/12/2026
-        var data2 = new Date(2024,11,23)
+        // Adicionar a diferença de dias à data1
+        data1.setDate(data1.getDate() + diferenca_mili_dia); // Adiciona a diferença de dias à data1
 
-        document.write(data1.toString());
-        document.write('<hr>')
-        document.write(data2.toString());
-        document.write('<br><hr>')
-
-        //converter datas para algo que possamos calcular
-        document.write(data1.getTime());
-        document.write('<hr>')
-        document.write(data2.getTime());
-        document.write('<hr>')
-        //encontrar a qtde de milissegundos entre data1 e data2
-
-        var milissegundos_entre_datas = Math.abs(data1.getTime() - data2.getTime())
-        document.write(milissegundos_entre_datas)
-        document.write('<hr>')
-
-        //descobrir a qtde de dias tem nessa diferença de millisegundos encontrada
-        //1 dia tem 24h, cada hora tem 60 minutos,
-        // cada minuto 60 segundos
-        // e cada segundo 1000 milissegundos
-        //então qantos milissegundos tem em um dia?
-        var milissegundos_por_dia = (1*24*60*60*1000)
-        document.write('1 dia tem: '+milissegundos_por_dia +' milissegundos')
-        var diferenca_mili_dia = milissegundos_entre_datas/milissegundos_por_dia
-        document.write('<br><hr>')
-        document.write('A diferença entre data1 e data2 é: '+diferenca_mili_dia+' dia(s)')
-        document.write('<br><hr>')
-        document.write('Portanto acrescentando a data2 a data ficara: '+data1.setDate(data1.getDate()+2))
-
-
+        // Exibir a data resultante após adicionar a diferença
+        document.write('Portanto, acrescentando a diferença de dias ( ' + diferenca_mili_dia.toFixed(0) + ' dias) à data1, ela ficará: ' + data1.toString());
     </script>
-
 </head>
 <body>
-    
 </body>
 </html>
