@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios - JavaScript</title>
+    <script>
+        var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+        function adicionar() {
+            var x = document.getElementById("label").value.trim(); // Remove espaços extras
+
+            if (x != '') {
+                alert('Campo vazio');
+            } else if (objetos.includes(x)) { // Verifica se já existe no array
+                alert('Item já existe');
+            } else {
+                objetos.push(x);
+
+            }
+        }
+        console.log(objetos);
+    </script>
+</head>
+<body>
+    <input type="text" id="label">
+    <button onclick="adicionar()">Adicionar</button>
+    <button>Ordenar</button>
+</body>
+</html>
