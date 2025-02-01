@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Matemáticas Js</title>
+
+    <script>
+
+        var x = Math.ceil (10.380)// arredonda o número de forma decrescente para o próximo numero inteiro, portanto o numero deve ser fracionado  //output = 10
+        document.write(x)
+        document.write('<br>')
+        
+        x = Math.floor (10.380)// faz o mesmo que o ceil, prem arredonda de forma crescente //output = 11
+        document.write(x)
+        document.write('<br>')
+        
+        
+        x = Math.round(10.580)//leva em consideração o peso da fração para fazer o arredondamento para cima o para baixo, se for maior que 500, arredonda de forma crescente e menos, de forma decrescente
+        document.write('<br>')
+        document.write(x) //output =11
+        
+        x = Math.round(10.400)
+        document.write('<br>')
+        document.write(x) //output = 10
+
+        
+        x = Math.random() // retorna um número relatório entre 0 e 1
+        document.write(x)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
