@@ -8,23 +8,31 @@
         var objetos = ['Cadeira', 'Impressora', 'Garfo'];
 
         function adicionar() {
-            var x = document.getElementById("label").value.trim(); // Remove espaços extras
+            var x = document.getElementById("label").value.trim(); 
 
-            if (x != '') {
-                alert('Campo vazio');
-            } else if (objetos.includes(x)) { // Verifica se já existe no array
-                alert('Item já existe');
-            } else {
-                objetos.push(x);
-
+            if (x != ''){
+                if(objetos.indexOf(x)!== -1){
+                    alert('O objeto já existe na lista.');
+                }else{
+                    objetos.push(x);
+                    console.log(objetos)
+                }
             }
         }
-        console.log(objetos);
+
+        function Ordenar(){
+            objetos.sort((a, b) => a.localeCompare(b));
+            console.log(objetos)
+        }     
+        function limpar(){
+            document.getElementById("label").value = '';
+        }
     </script>
 </head>
 <body>
     <input type="text" id="label">
     <button onclick="adicionar()">Adicionar</button>
-    <button>Ordenar</button>
+    <button onclick="Ordenar()">Ordenar</button>
+    <button onclick="limpar()">Limpar</button>
 </body>
 </html>
