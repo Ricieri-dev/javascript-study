@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios - JavaScript</title>
+    <script>
+        var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+        function adicionar() {
+            var x = document.getElementById("label").value.trim(); 
+
+            if (x != ''){
+                if(objetos.indexOf(x)!== -1){
+                    alert('O objeto já existe na lista.');
+                }else{
+                    objetos.push(x);
+                    console.log(objetos)
+                }
+            }
+        }
+
+        function Ordenar(){
+            objetos.sort((a, b) => a.localeCompare(b));
+            console.log(objetos)
+        }     
+        function limpar(){
+            document.getElementById("label").value = '';
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="label">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="Ordenar()">Ordenar</button>
+    <button onclick="limpar()">Limpar</button>
+</body>
+</html>

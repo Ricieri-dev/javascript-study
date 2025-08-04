@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções nativas Js para String</title>
+
+    <script>
+
+        //propriedade lenght, retorna a quantidade de caracteres de uma string
+        //document.write('Jorge Sant Ana'.length)
+        document.write('<br>')
+        //funcão charAt() vai recuperar o caractere contido no indice indicado no parametro
+        document.write('Jorge Sant Ana'.charAt(7))
+        document.write('<br>')
+
+        var nome = 'Jorge Sant Ana '
+        //indexOf() retorna a posição da primeira ocorrência de m valor específico dentro da String
+        document.write(nome.indexOf('e'))
+
+        //replace() substitui cadeias de caracteres por outra encaminhada no parametro
+        document.write(nome.replace('Jorge','Raffa '))
+        
+        //substr() extraí o caracters de uma string começando de m ponto específico até outro ponto específico, ambos passados por parametros
+        document.write(nome.substr(6,4))
+        //toLowerCase(converte todos caracteres em minusculos) toUpperCase(converte os caracteres em maiusculos.)
+        document.write(nome.toUpperCase())
+        //trim() remove os espaços em brancodo começo e do fim da string
+        document.write(' '+nome.trim()+' ')
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

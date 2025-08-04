@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções com datas</title>
+    <script>
+        // Diferença de dias entre as datas
+        var data1 = new Date(2024, 0, 15); // 15/01/2024
+        var data2 = new Date(2024, 11, 23); // 23/12/2024
+
+        // Mostrar as datas
+        document.write("Data 1: " + data1.toString());
+        document.write('<br><hr>');
+        document.write("Data 2: " + data2.toString());
+        document.write('<br><hr>');
+
+        // Converter datas para milissegundos
+        var milissegundos1 = data1.getTime();
+        var milissegundos2 = data2.getTime();
+        document.write("Milissegundos Data 1: " + milissegundos1);
+        document.write('<br>');
+        document.write("Milissegundos Data 2: " + milissegundos2);
+        document.write('<br><hr>');
+
+        // Calcular a diferença de milissegundos
+        var milissegundos_entre_datas = Math.abs(milissegundos1 - milissegundos2);
+        document.write("Milissegundos entre as datas: " + milissegundos_entre_datas);
+        document.write('<br><hr>');
+
+        // Definir milissegundos por dia
+        var milissegundos_por_dia = (1 * 24 * 60 * 60 * 1000);
+        document.write('1 dia tem: ' + milissegundos_por_dia + ' milissegundos');
+        document.write('<br><hr>');
+
+        // Calcular a diferença em dias
+        var diferenca_mili_dia = milissegundos_entre_datas / milissegundos_por_dia;
+        document.write('A diferença entre data1 e data2 é: ' + diferenca_mili_dia.toFixed(0) + ' dia(s)');
+        document.write('<br><hr>');
+
+        // Adicionar a diferença de dias à data1
+        data1.setDate(data1.getDate() + diferenca_mili_dia); // Adiciona a diferença de dias à data1
+
+        // Exibir a data resultante após adicionar a diferença
+        document.write('Portanto, acrescentando a diferença de dias ( ' + diferenca_mili_dia.toFixed(0) + ' dias) à data1, ela ficará: ' + data1.toString());
+    </script>
+</head>
+<body>
+</body>
+</html>
